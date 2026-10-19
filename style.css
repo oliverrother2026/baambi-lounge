@@ -25,15 +25,23 @@ body {
     min-height: 100dvh;
     position: relative;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero > img {
     position: relative;
     width: 100%;
     height: auto;
+    max-height: 40dvh;
+    object-fit: contain;
     display: block;
-    margin-bottom: -150px;
+    margin: 0 auto;
 }
+
 
 
 /* =========================
@@ -42,13 +50,15 @@ body {
 
 .overlay {
     position: relative;
+    z-index: 1;
     width: 100%;
-    padding: 20px 20px 40px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    gap: 15px;
 }
 
 .button {
@@ -90,8 +100,8 @@ body {
 
 .newsletter {
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 480px;
+    padding: 12px;
 
     background: rgba(0,0,0,.55);
     backdrop-filter: blur(10px);
@@ -99,6 +109,13 @@ body {
 
     text-align: center;
     color: white;
+}
+
+.newsletter iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
 }
 
 .newsletter h2 {
@@ -201,13 +218,17 @@ body {
         position: relative;
         width: 100%;
         height: auto;
+        max-height: 30dvh;
+        object-fit: contain;
         display: block;
+        margin: 0 auto;
     }
 
     .overlay {
+        width: 100%;
         min-height: auto;
-        padding: 20px 15px 35px;
-        gap: 20px;
+        padding: 35px 15px 25px;
+        gap: 12px;
     }
 
     .button {
@@ -218,10 +239,18 @@ body {
 
     .newsletter {
         max-width: 100%;
-        padding: 20px 15px;
+        padding: 5px;
     }
+    
 
     .newsletter h2 {
         font-size: 21px;
+    }
+}
+/* NEWSLETTER – MOBILE ANSICHT */
+
+@media (max-width: 600px) {
+    .newsletter iframe {
+        height: 540px;
     }
 }
